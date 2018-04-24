@@ -5,23 +5,32 @@ import { SmartTextarea } from '../utils'
 export const METHODS = ['GET', 'POST', 'PUT', 'DELETE']
 
 // 模拟数据
-const mockInterface = process.env.NODE_ENV === 'development'
-  ? () => Mock.mock({
-    name: '接口@CTITLE(4)',
-    url: '@URL',
-    'method|1': METHODS,
-    description: '@CPARAGRAPH',
-    repositoryId: undefined,
-    moduleId: undefined
-  })
-  : () => ({
-    name: '',
-    url: '',
-    method: 'GET',
-    description: '',
-    repositoryId: undefined,
-    moduleId: undefined
-  })
+// const mockInterface = process.env.NODE_ENV === 'development'
+//   ? () => Mock.mock({
+//     name: '接口@CTITLE(4)',
+//     url: '@URL',
+//     'method|1': METHODS,
+//     description: '@CPARAGRAPH',
+//     repositoryId: undefined,
+//     moduleId: undefined
+//   })
+//   : () => ({
+//     name: '',
+//     url: '',
+//     method: 'GET',
+//     description: '',
+//     repositoryId: undefined,
+//     moduleId: undefined
+//   })
+
+const mockInterface = () => ({
+  name: '',
+  url: '',
+  method: 'GET',
+  description: '',
+  repositoryId: undefined,
+  moduleId: undefined
+})
 
 class InterfaceForm extends Component {
   static contextTypes = {

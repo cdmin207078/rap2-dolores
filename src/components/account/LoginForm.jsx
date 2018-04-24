@@ -7,15 +7,20 @@ import Mock from 'mockjs'
 import './LoginForm.css'
 
 // 模拟数据
-const mockUser = process.env.NODE_ENV === 'development'
-  ? () => Mock.mock({
-    email: 'admin@rap2.com',
-    password: 'admin'
-  })
-  : () => ({
-    email: '',
-    password: ''
-  })
+// const mockUser = process.env.NODE_ENV === 'development'
+//   ? () => Mock.mock({
+//     email: 'admin@rap2.com',
+//     password: 'admin'
+//   })
+//   : () => ({
+//     email: '',
+//     password: ''
+//   })
+
+const mockUser = () => ({
+  email: '',
+  password: ''
+})
 
 mockUser.captchaId = Date.now()
 

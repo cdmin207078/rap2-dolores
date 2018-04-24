@@ -3,17 +3,22 @@ import { PropTypes, connect, Link, Mock } from '../../family'
 import { SmartTextarea } from '../utils'
 
 // 模拟数据
-const mockModule = process.env.NODE_ENV === 'development'
-  ? () => Mock.mock({
-    name: '模块@CTITLE(4)',
-    description: '@CPARAGRAPH',
-    repositoryId: undefined
-  })
-  : () => ({
-    name: '',
-    description: '',
-    repositoryId: undefined
-  })
+// const mockModule = process.env.NODE_ENV === 'development'
+//   ? () => Mock.mock({
+//     name: '模块@CTITLE(4)',
+//     description: '@CPARAGRAPH',
+//     repositoryId: undefined
+//   })
+//   : () => ({
+//     name: '',
+//     description: '',
+//     repositoryId: undefined
+//   })
+const mockModule = () => ({
+  name: '',
+  description: '',
+  repositoryId: undefined
+})
 
 // 展示组件
 class ModuleForm extends Component {

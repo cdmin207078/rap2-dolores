@@ -8,29 +8,41 @@ import SmartTextarea from '../utils/SmartTextarea'
 export const TYPES = ['String', 'Number', 'Boolean', 'Object', 'Array', 'Function', 'RegExp']
 
 // 模拟数据
-const mockProperty = process.env.NODE_ENV === 'development'
-  ? () => Mock.mock({
-    'scope|1': ['request', 'response'],
-    name: '@WORD(6)',
-    'type|1': TYPES,
-    'value|1': ['@INT', '@FLOAT', '@TITLE', '@NAME'],
-    description: '@CSENTENCE',
-    parentId: -1,
-    interfaceId: '@NATURAL',
-    moduleId: '@NATURAL',
-    repositoryId: '@NATURAL'
-  })
-  : () => ({
-    scope: 'response',
-    name: '',
-    type: 'String',
-    value: '',
-    description: '',
-    parentId: -1,
-    interfaceId: undefined,
-    moduleId: undefined,
-    repositoryId: undefined
-  })
+// const mockProperty = process.env.NODE_ENV === 'development'
+//   ? () => Mock.mock({
+//     'scope|1': ['request', 'response'],
+//     name: '@WORD(6)',
+//     'type|1': TYPES,
+//     'value|1': ['@INT', '@FLOAT', '@TITLE', '@NAME'],
+//     description: '@CSENTENCE',
+//     parentId: -1,
+//     interfaceId: '@NATURAL',
+//     moduleId: '@NATURAL',
+//     repositoryId: '@NATURAL'
+//   })
+//   : () => ({
+//     scope: 'response',
+//     name: '',
+//     type: 'String',
+//     value: '',
+//     description: '',
+//     parentId: -1,
+//     interfaceId: undefined,
+//     moduleId: undefined,
+//     repositoryId: undefined
+//   })
+
+const mockProperty = () => ({
+  scope: 'response',
+  name: '',
+  type: 'String',
+  value: '',
+  description: '',
+  parentId: -1,
+  interfaceId: undefined,
+  moduleId: undefined,
+  repositoryId: undefined
+})
 
 class PropertyForm extends Component {
   static propTypes = {

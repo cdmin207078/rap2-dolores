@@ -8,23 +8,32 @@ import { GoInfo } from 'react-icons/lib/go'
 
 // 模拟数据
 // DONE 2.1 各种表单的初始值混乱，待重构
-const mockRepository = process.env.NODE_ENV === 'development'
-  ? () => mock({
-    name: '仓库@CTITLE(6)',
-    description: '@CPARAGRAPH',
-    members: [],
-    ownerId: undefined,
-    organizationId: undefined,
-    collaboratorIds: []
-  })
-  : () => ({
-    name: '',
-    description: '',
-    members: [],
-    ownerId: undefined,
-    organizationId: undefined,
-    collaboratorIds: []
-  })
+// const mockRepository = process.env.NODE_ENV === 'development'
+//   ? () => mock({
+//     name: '仓库@CTITLE(6)',
+//     description: '@CPARAGRAPH',
+//     members: [],
+//     ownerId: undefined,
+//     organizationId: undefined,
+//     collaboratorIds: []
+//   })
+//   : () => ({
+//     name: '',
+//     description: '',
+//     members: [],
+//     ownerId: undefined,
+//     organizationId: undefined,
+//     collaboratorIds: []
+//   })
+
+const mockRepository = () => ({
+  name: '',
+  description: '',
+  members: [],
+  ownerId: undefined,
+  organizationId: undefined,
+  collaboratorIds: []
+})
 
 // 展示组件
 // √ 自动获得焦点：组织、仓库、模块、接口、属性、导入器、注册、登陆

@@ -6,17 +6,23 @@ import { addUser } from '../../actions/account'
 import './RegisterForm.css'
 
 // 模拟数据
-const mockUser = process.env.NODE_ENV === 'development'
-  ? () => Mock.mock({
-    fullname: '@CNAME',
-    email: '@email',
-    password: '@string(6)'
-  })
-  : () => ({
-    fullname: '',
-    email: '',
-    password: ''
-  })
+// const mockUser = process.env.NODE_ENV === 'development'
+//   ? () => Mock.mock({
+//     fullname: '@CNAME',
+//     email: '@email',
+//     password: '@string(6)'
+//   })
+//   : () => ({
+//     fullname: '',
+//     email: '',
+//     password: ''
+//   })
+
+const mockUser = () => ({
+  fullname: '',
+  email: '',
+  password: ''
+})
 
 // 展示组件
 class RegisterForm extends Component {

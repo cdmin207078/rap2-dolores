@@ -8,21 +8,29 @@ import RadioList from '../utils/RadioList'
 import { FORM } from '../../family/UIConst'
 
 // 模拟数据
-const mockOrganization = process.env.NODE_ENV === 'development'
-  ? () => Mock.mock({
-    name: '团队@CTITLE(5)',
-    description: '@CPARAGRAPH',
-    logo: '@URL',
-    ownerId: undefined,
-    members: []
-  })
-  : () => ({
-    name: '',
-    description: '',
-    logo: '',
-    ownerId: undefined,
-    members: []
-  })
+// const mockOrganization = process.env.NODE_ENV === 'development'
+//   ? () => Mock.mock({
+//     name: '团队@CTITLE(5)',
+//     description: '@CPARAGRAPH',
+//     logo: '@URL',
+//     ownerId: undefined,
+//     members: []
+//   })
+//   : () => ({
+//     name: '',
+//     description: '',
+//     logo: '',
+//     ownerId: undefined,
+//     members: []
+//   })
+
+const mockOrganization = () => ({
+  name: '',
+  description: '',
+  logo: '',
+  ownerId: undefined,
+  members: []
+})
 
 // 展示组件
 // TODO 2.x 支持私有组织

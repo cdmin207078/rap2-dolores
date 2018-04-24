@@ -3,15 +3,17 @@ import { PropTypes, connect, Link, Mock, _ } from '../../family'
 import { RCodeMirror } from '../utils/'
 import { addProperty } from '../../actions/property'
 
-const mockResult = process.env.NODE_ENV === 'development'
-  ? () => ({
-    foo: {
-      bar: {
-        faz: {}
-      }
-    }
-  })
-  : () => ({})
+// const mockResult = process.env.NODE_ENV === 'development'
+//   ? () => ({
+//     foo: {
+//       bar: {
+//         faz: {}
+//       }
+//     }
+//   })
+//   : () => ({})
+
+const mockResult = () => ({})
 
 class Importer extends Component {
   static contextTypes = {
