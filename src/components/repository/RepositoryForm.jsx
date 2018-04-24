@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { mock } from 'mockjs'
+// import { mock } from 'mockjs'
 import { SmartTextarea, MembersInput, RParsley } from '../utils'
 import { GoInfo } from 'react-icons/lib/go'
 

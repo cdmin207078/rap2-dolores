@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import Mock from 'mockjs'
+// import Mock from 'mockjs'
 import SmartTextarea from '../utils/SmartTextarea'
 
 export const TYPES = ['String', 'Number', 'Boolean', 'Object', 'Array', 'Function', 'RegExp']

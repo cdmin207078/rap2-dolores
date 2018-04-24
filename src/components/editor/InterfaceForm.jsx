@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { PropTypes, connect, Link, Mock } from '../../family'
+// import { PropTypes, connect, Link, Mock } from '../../family'
+import { PropTypes, connect, Link } from '../../family'
 import { SmartTextarea } from '../utils'
 
 export const METHODS = ['GET', 'POST', 'PUT', 'DELETE']

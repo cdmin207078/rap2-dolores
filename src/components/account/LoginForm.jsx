@@ -3,7 +3,7 @@ import { PropTypes, connect } from '../../family'
 import { login } from '../../actions/account'
 import { Link } from 'react-router-dom'
 import { serve } from '../../config'
-import Mock from 'mockjs'
+// import Mock from 'mockjs'
 import './LoginForm.css'
 
 // 模拟数据
