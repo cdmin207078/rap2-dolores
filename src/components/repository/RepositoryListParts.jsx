@@ -4,9 +4,10 @@ import { Spin, RModal, Pagination } from '../utils'
 
 import RepositoryList from './RepositoryList'
 import RepositoryForm from './RepositoryForm'
+import ImportRepositoryForm from './ImportRepositoryForm'
 import { addRepository, updateRepository, deleteRepository } from '../../actions/repository'
 
-import { GoRepo } from 'react-icons/lib/go'
+import { GoRepo, GoMoveRight } from 'react-icons/lib/go'
 
 export const contextTypes = {
   store: PropTypes.object
@@ -43,7 +44,10 @@ export class CreateButton extends Component {
   }
   constructor (props) {
     super(props)
-    this.state = { create: !!props.create }
+    this.state = {
+      create: !!props.create,
+      import: !!props.import
+    }
   }
   render () {
     let { organization } = this.props
@@ -53,9 +57,19 @@ export class CreateButton extends Component {
         <button className='RepositoryCreateButton btn btn-success' onClick={e => this.setState({ create: true })}>
           <GoRepo /> 新建仓库
         </button>
+        {organization &&
+          <button className='RepositoryCreateButton btn btn-secondary ml8' onClick={e => this.setState({ import: true })}>
+            <GoMoveRight /> 导入仓库
+          </button>
+        }
         <RModal when={this.state.create} onClose={e => this.setState({ create: false })} onResolve={this.handleUpdate}>
           <RepositoryForm title='新建仓库' organization={organization} />
         </RModal>
+        {organization &&
+          <RModal when={this.state.import && !!organization} onClose={e => this.setState({ import: false })} onResolve={this.handleUpdate}>
+            <ImportRepositoryForm title='导入仓库' orgId={organization.id} />
+          </RModal>
+        }
       </span>
     )
   }
@@ -88,8 +102,6 @@ export class RepositoriesTypeDropdown extends Component {
   handlePush = (url) => {
     let { store } = this.context
     store.dispatch(push(url))
-    // let uri = StoreStateRouterLocationURI(store)
-    // store.dispatch(replace(uri.href()))
   }
 }
 
@@ -102,12 +114,6 @@ export class SearchGroup extends Component {
     this.state = { name: props.name || '' }
   }
   render () {
-    // <div className='input-group float-right w280'>
-    //   <input type='text' value={this.state.name} className='form-control' placeholder='仓库名称或 ID' autoComplete='off'
-    //     onChange={e => this.setState({ name: e.target.value.trim() })}
-    //     onKeyUp={e => e.which === 13 && this.handleSearch()} />
-    //   <span className='btn input-group-addon' onClick={this.handleSearch}><span className=''>&#xe60b;</span></span>
-    // </div>
     return (
       <input type='text' value={this.state.name} className='form-control float-left w280' placeholder='搜索仓库：输入名称或 ID' autoComplete='off'
         onChange={e => this.setState({ name: e.target.value.trim() })}

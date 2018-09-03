@@ -72,7 +72,6 @@ class LoginForm extends Component {
     )
   }
   handleSubmit = (e) => {
-    // console.log(this)
     let { history, onLogin } = this.props
     e.preventDefault()
     onLogin(this.state, () => {
